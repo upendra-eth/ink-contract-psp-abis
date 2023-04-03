@@ -1,0 +1,1031 @@
+{
+  "source": {
+    "hash": "0xbd264f7ce0b927a67d31a97fc9754b323b2eb20dafd7dd60f983815ad3e5a9b8",
+    "language": "ink! 3.0.0-rc6",
+    "compiler": "rustc 1.69.0-nightly"
+  },
+  "contract": {
+    "name": "my_psp22",
+    "version": "1.3.0",
+    "authors": [
+      "Supercolony <green.baneling@supercolony.net>"
+    ]
+  },
+  "V1": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [
+            {
+              "name": "total_supply",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [],
+          "name": [
+            "new"
+          ],
+          "selector": "0x9bae9d5e"
+        }
+      ],
+      "docs": [],
+      "events": [],
+      "messages": [
+        {
+          "args": [
+            {
+              "name": "spender",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "ApproveInput1"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "ApproveInput2"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [
+            " Allows `spender` to withdraw from the caller's account multiple times, up to",
+            " the `value` amount.",
+            "",
+            " If this function is called again it overwrites the current allowance with `value`.",
+            "",
+            " An `Approval` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP22",
+            "approve"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "ApproveOutput"
+            ],
+            "type": 11
+          },
+          "selector": "0xb20f1bbd"
+        },
+        {
+          "args": [
+            {
+              "name": "spender",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "DecreaseAllowanceInput1"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "delta_value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "DecreaseAllowanceInput2"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [
+            " Atomically decreases the allowance granted to `spender` by the caller.",
+            "",
+            " An `Approval` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `InsufficientAllowance` error if there are not enough tokens allowed",
+            " by owner for `spender`.",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP22",
+            "decrease_allowance"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "DecreaseAllowanceOutput"
+            ],
+            "type": 11
+          },
+          "selector": "0xfecb57d5"
+        },
+        {
+          "args": [
+            {
+              "name": "spender",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "IncreaseAllowanceInput1"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "delta_value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "IncreaseAllowanceInput2"
+                ],
+                "type": 0
+              }
+            }
+          ],
+          "docs": [
+            " Atomically increases the allowance granted to `spender` by the caller.",
+            "",
+            " An `Approval` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP22",
+            "increase_allowance"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "IncreaseAllowanceOutput"
+            ],
+            "type": 11
+          },
+          "selector": "0x96d6b57a"
+        },
+        {
+          "args": [
+            {
+              "name": "owner",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "BalanceOfInput1"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [
+            " Returns the account Balance for the specified `owner`.",
+            "",
+            " Returns `0` if the account is non-existent."
+          ],
+          "mutates": false,
+          "name": [
+            "PSP22",
+            "balance_of"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "BalanceOfOutput"
+            ],
+            "type": 0
+          },
+          "selector": "0x6568382f"
+        },
+        {
+          "args": [
+            {
+              "name": "to",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferInput1"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferInput2"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferInput3"
+                ],
+                "type": 15
+              }
+            }
+          ],
+          "docs": [
+            " Transfers `value` amount of tokens from the caller's account to account `to`",
+            " with additional `data` in unspecified format.",
+            "",
+            " On success a `Transfer` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `InsufficientBalance` error if there are not enough tokens on",
+            " the caller's account Balance.",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP22",
+            "transfer"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "TransferOutput"
+            ],
+            "type": 11
+          },
+          "selector": "0xdb20f9f5"
+        },
+        {
+          "args": [
+            {
+              "name": "owner",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "AllowanceInput1"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "spender",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "AllowanceInput2"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [
+            " Returns the amount which `spender` is still allowed to withdraw from `owner`.",
+            "",
+            " Returns `0` if no allowance has been set `0`."
+          ],
+          "mutates": false,
+          "name": [
+            "PSP22",
+            "allowance"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "AllowanceOutput"
+            ],
+            "type": 0
+          },
+          "selector": "0x4d47d921"
+        },
+        {
+          "args": [
+            {
+              "name": "from",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferFromInput1"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "to",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferFromInput2"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferFromInput3"
+                ],
+                "type": 0
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "displayName": [
+                  "psp22_external",
+                  "TransferFromInput4"
+                ],
+                "type": 15
+              }
+            }
+          ],
+          "docs": [
+            " Transfers `value` tokens on the behalf of `from` to the account `to`",
+            " with additional `data` in unspecified format.",
+            "",
+            " This can be used to allow a contract to transfer tokens on ones behalf and/or",
+            " to charge fees in sub-currencies, for example.",
+            "",
+            " On success a `Transfer` and `Approval` events are emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `InsufficientAllowance` error if there are not enough tokens allowed",
+            " for the caller to withdraw from `from`.",
+            "",
+            " Returns `InsufficientBalance` error if there are not enough tokens on",
+            " the the account Balance of `from`.",
+            "",
+            " Returns `ZeroSenderAddress` error if sender's address is zero.",
+            "",
+            " Returns `ZeroRecipientAddress` error if recipient's address is zero."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP22",
+            "transfer_from"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "TransferFromOutput"
+            ],
+            "type": 11
+          },
+          "selector": "0x54b3c76e"
+        },
+        {
+          "args": [],
+          "docs": [
+            " Returns the total token supply."
+          ],
+          "mutates": false,
+          "name": [
+            "PSP22",
+            "total_supply"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp22_external",
+              "TotalSupplyOutput"
+            ],
+            "type": 0
+          },
+          "selector": "0x162df8c2"
+        },
+        {
+          "args": [
+            {
+              "name": "hated",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [],
+          "mutates": true,
+          "name": [
+            "set_hated_account"
+          ],
+          "payable": false,
+          "returnType": null,
+          "selector": "0x19398962"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "mutates": false,
+          "name": [
+            "get_hated_account"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "AccountId"
+            ],
+            "type": 4
+          },
+          "selector": "0x9e5e363f"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "struct": {
+                "fields": [
+                  {
+                    "layout": {
+                      "cell": {
+                        "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                        "ty": 0
+                      }
+                    },
+                    "name": "supply"
+                  },
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "struct": {
+                                "fields": [
+                                  {
+                                    "layout": {
+                                      "cell": {
+                                        "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                                        "ty": 1
+                                      }
+                                    },
+                                    "name": "header"
+                                  },
+                                  {
+                                    "layout": {
+                                      "struct": {
+                                        "fields": [
+                                          {
+                                            "layout": {
+                                              "cell": {
+                                                "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                                                "ty": 2
+                                              }
+                                            },
+                                            "name": "len"
+                                          },
+                                          {
+                                            "layout": {
+                                              "array": {
+                                                "cellsPerElem": 1,
+                                                "layout": {
+                                                  "cell": {
+                                                    "key": "0x0200000001000000000000000000000000000000000000000000000000000000",
+                                                    "ty": 3
+                                                  }
+                                                },
+                                                "len": 4294967295,
+                                                "offset": "0x0300000000000000000000000000000000000000000000000000000000000000"
+                                              }
+                                            },
+                                            "name": "elems"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "name": "entries"
+                                  }
+                                ]
+                              }
+                            },
+                            "name": "keys"
+                          },
+                          {
+                            "layout": {
+                              "hash": {
+                                "layout": {
+                                  "cell": {
+                                    "key": "0x0300000001000000000000000000000000000000000000000000000000000000",
+                                    "ty": 8
+                                  }
+                                },
+                                "offset": "0x0200000001000000000000000000000000000000000000000000000000000000",
+                                "strategy": {
+                                  "hasher": "Blake2x256",
+                                  "postfix": "",
+                                  "prefix": "0x696e6b20686173686d6170"
+                                }
+                              }
+                            },
+                            "name": "values"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "balances"
+                  },
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "struct": {
+                                "fields": [
+                                  {
+                                    "layout": {
+                                      "cell": {
+                                        "key": "0x0300000001000000000000000000000000000000000000000000000000000000",
+                                        "ty": 1
+                                      }
+                                    },
+                                    "name": "header"
+                                  },
+                                  {
+                                    "layout": {
+                                      "struct": {
+                                        "fields": [
+                                          {
+                                            "layout": {
+                                              "cell": {
+                                                "key": "0x0400000001000000000000000000000000000000000000000000000000000000",
+                                                "ty": 2
+                                              }
+                                            },
+                                            "name": "len"
+                                          },
+                                          {
+                                            "layout": {
+                                              "array": {
+                                                "cellsPerElem": 1,
+                                                "layout": {
+                                                  "cell": {
+                                                    "key": "0x0400000002000000000000000000000000000000000000000000000000000000",
+                                                    "ty": 9
+                                                  }
+                                                },
+                                                "len": 4294967295,
+                                                "offset": "0x0500000001000000000000000000000000000000000000000000000000000000"
+                                              }
+                                            },
+                                            "name": "elems"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "name": "entries"
+                                  }
+                                ]
+                              }
+                            },
+                            "name": "keys"
+                          },
+                          {
+                            "layout": {
+                              "hash": {
+                                "layout": {
+                                  "cell": {
+                                    "key": "0x0500000002000000000000000000000000000000000000000000000000000000",
+                                    "ty": 8
+                                  }
+                                },
+                                "offset": "0x0400000002000000000000000000000000000000000000000000000000000000",
+                                "strategy": {
+                                  "hasher": "Blake2x256",
+                                  "postfix": "",
+                                  "prefix": "0x696e6b20686173686d6170"
+                                }
+                              }
+                            },
+                            "name": "values"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "allowances"
+                  }
+                ]
+              }
+            },
+            "name": "psp22"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0500000002000000000000000000000000000000000000000000000000000000",
+                "ty": 4
+              }
+            },
+            "name": "hated_account"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "primitive": "u128"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "last_vacant",
+                  "type": 2,
+                  "typeName": "Index"
+                },
+                {
+                  "name": "len",
+                  "type": 2,
+                  "typeName": "u32"
+                },
+                {
+                  "name": "len_entries",
+                  "type": 2,
+                  "typeName": "u32"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Header"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 7,
+                      "typeName": "VacantEntry"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Vacant"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 4,
+                      "typeName": "T"
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Occupied"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 4
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Entry"
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 5,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 6
+            }
+          }
+        }
+      },
+      {
+        "id": 6,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "next",
+                  "type": 2,
+                  "typeName": "Index"
+                },
+                {
+                  "name": "prev",
+                  "type": 2,
+                  "typeName": "Index"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "VacantEntry"
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "value",
+                  "type": 0,
+                  "typeName": "V"
+                },
+                {
+                  "name": "key_index",
+                  "type": 2,
+                  "typeName": "KeyIndex"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "V",
+              "type": 0
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "hashmap",
+            "ValueEntry"
+          ]
+        }
+      },
+      {
+        "id": 9,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 7,
+                      "typeName": "VacantEntry"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Vacant"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 10,
+                      "typeName": "T"
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Occupied"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 10
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Entry"
+          ]
+        }
+      },
+      {
+        "id": 10,
+        "type": {
+          "def": {
+            "tuple": [
+              4,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "id": 11,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 12
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 13
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 12
+            },
+            {
+              "name": "E",
+              "type": 13
+            }
+          ],
+          "path": [
+            "Result"
+          ]
+        }
+      },
+      {
+        "id": 12,
+        "type": {
+          "def": {
+            "tuple": []
+          }
+        }
+      },
+      {
+        "id": 13,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 14,
+                      "typeName": "String"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Custom"
+                },
+                {
+                  "index": 1,
+                  "name": "InsufficientBalance"
+                },
+                {
+                  "index": 2,
+                  "name": "InsufficientAllowance"
+                },
+                {
+                  "index": 3,
+                  "name": "ZeroRecipientAddress"
+                },
+                {
+                  "index": 4,
+                  "name": "ZeroSenderAddress"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 14,
+                      "typeName": "String"
+                    }
+                  ],
+                  "index": 5,
+                  "name": "SafeTransferCheckFailed"
+                }
+              ]
+            }
+          },
+          "path": [
+            "contracts",
+            "traits",
+            "errors",
+            "psp22",
+            "PSP22Error"
+          ]
+        }
+      },
+      {
+        "id": 14,
+        "type": {
+          "def": {
+            "primitive": "str"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 6
+            }
+          }
+        }
+      }
+    ]
+  }
+}

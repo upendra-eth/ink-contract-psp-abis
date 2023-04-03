@@ -1,0 +1,1193 @@
+{
+  "source": {
+    "hash": "0xa040a05416bcf917859d54c241dc0624163bdbe9a7d99e69b3621b5981e116dc",
+    "language": "ink! 3.0.0-rc6",
+    "compiler": "rustc 1.69.0-nightly"
+  },
+  "contract": {
+    "name": "my_psp1155",
+    "version": "1.3.0",
+    "authors": [
+      "Supercolony <dominik.krizo@supercolony.net>"
+    ]
+  },
+  "V1": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [],
+          "docs": [],
+          "name": [
+            "new"
+          ],
+          "selector": "0x9bae9d5e"
+        }
+      ],
+      "docs": [],
+      "events": [],
+      "messages": [
+        {
+          "args": [
+            {
+              "name": "from",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "TransferFromInput1"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "to",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "TransferFromInput2"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "id",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "TransferFromInput3"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "amount",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "TransferFromInput4"
+                ],
+                "type": 9
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "TransferFromInput5"
+                ],
+                "type": 17
+              }
+            }
+          ],
+          "docs": [
+            " Transfers `amount` tokens of token type `id` from `from` to `to`. Also some `data` can be passed.",
+            "",
+            " On success a `TransferSingle` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns `TransferToZeroAddress` error if recipient is zero account.",
+            "",
+            " Returns `NotAllowed` error if transfer is not approved.",
+            "",
+            " Returns `InsufficientBalance` error if `from` doesn't contain enough balance.",
+            "",
+            " Returns `SafeTransferCheckFailed` error if `to` doesn't accept transfer."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP1155",
+            "transfer_from"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp1155_external",
+              "TransferFromOutput"
+            ],
+            "type": 18
+          },
+          "selector": "0x998691a9"
+        },
+        {
+          "args": [
+            {
+              "name": "from",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BatchTransferFromInput1"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "to",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BatchTransferFromInput2"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "ids_amounts",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BatchTransferFromInput3"
+                ],
+                "type": 21
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BatchTransferFromInput4"
+                ],
+                "type": 17
+              }
+            }
+          ],
+          "docs": [
+            " Batched version of {safe_transfer_from}.",
+            "",
+            " On success a `TransferBatch` event is emitted."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP1155",
+            "batch_transfer_from"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp1155_external",
+              "BatchTransferFromOutput"
+            ],
+            "type": 18
+          },
+          "selector": "0xe54fd5e7"
+        },
+        {
+          "args": [
+            {
+              "name": "account",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "IsApprovedForAllInput1"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "operator",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "IsApprovedForAllInput2"
+                ],
+                "type": 6
+              }
+            }
+          ],
+          "docs": [
+            " Returns true if `operator` is approved to transfer ``account``'s tokens."
+          ],
+          "mutates": false,
+          "name": [
+            "PSP1155",
+            "is_approved_for_all"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp1155_external",
+              "IsApprovedForAllOutput"
+            ],
+            "type": 13
+          },
+          "selector": "0xadadef54"
+        },
+        {
+          "args": [
+            {
+              "name": "accounts_ids",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BalanceOfBatchInput1"
+                ],
+                "type": 23
+              }
+            }
+          ],
+          "docs": [
+            " Batched version of {balance_of}."
+          ],
+          "mutates": false,
+          "name": [
+            "PSP1155",
+            "balance_of_batch"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp1155_external",
+              "BalanceOfBatchOutput"
+            ],
+            "type": 25
+          },
+          "selector": "0xbdf26cb6"
+        },
+        {
+          "args": [
+            {
+              "name": "operator",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "SetApprovalForAllInput1"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "approved",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "SetApprovalForAllInput2"
+                ],
+                "type": 13
+              }
+            }
+          ],
+          "docs": [
+            " Grants or revokes permission to `operator` to transfer the caller's tokens, according to `approved`",
+            "",
+            " On success a `ApprovalForAll` event is emitted.",
+            "",
+            " # Errors",
+            "",
+            " Returns with `NotAllowed` error if it is self approve."
+          ],
+          "mutates": true,
+          "name": [
+            "PSP1155",
+            "set_approval_for_all"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp1155_external",
+              "SetApprovalForAllOutput"
+            ],
+            "type": 18
+          },
+          "selector": "0xb30e3419"
+        },
+        {
+          "args": [
+            {
+              "name": "account",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BalanceOfInput1"
+                ],
+                "type": 6
+              }
+            },
+            {
+              "name": "id",
+              "type": {
+                "displayName": [
+                  "psp1155_external",
+                  "BalanceOfInput2"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [
+            " Returns the amount of tokens of token type `id` owned by `account`."
+          ],
+          "mutates": false,
+          "name": [
+            "PSP1155",
+            "balance_of"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "psp1155_external",
+              "BalanceOfOutput"
+            ],
+            "type": 9
+          },
+          "selector": "0x2908d826"
+        },
+        {
+          "args": [
+            {
+              "name": "id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 4
+              }
+            }
+          ],
+          "docs": [],
+          "mutates": true,
+          "name": [
+            "deny"
+          ],
+          "payable": false,
+          "returnType": null,
+          "selector": "0x9117e1d3"
+        },
+        {
+          "args": [
+            {
+              "name": "id",
+              "type": {
+                "displayName": [
+                  "Id"
+                ],
+                "type": 4
+              }
+            },
+            {
+              "name": "amount",
+              "type": {
+                "displayName": [
+                  "Balance"
+                ],
+                "type": 9
+              }
+            }
+          ],
+          "docs": [],
+          "mutates": true,
+          "name": [
+            "mint_tokens"
+          ],
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Result"
+            ],
+            "type": 18
+          },
+          "selector": "0xca160a71"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "struct": {
+                "fields": [
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "struct": {
+                                "fields": [
+                                  {
+                                    "layout": {
+                                      "cell": {
+                                        "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                                        "ty": 0
+                                      }
+                                    },
+                                    "name": "header"
+                                  },
+                                  {
+                                    "layout": {
+                                      "struct": {
+                                        "fields": [
+                                          {
+                                            "layout": {
+                                              "cell": {
+                                                "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                                                "ty": 1
+                                              }
+                                            },
+                                            "name": "len"
+                                          },
+                                          {
+                                            "layout": {
+                                              "array": {
+                                                "cellsPerElem": 1,
+                                                "layout": {
+                                                  "cell": {
+                                                    "key": "0x0100000001000000000000000000000000000000000000000000000000000000",
+                                                    "ty": 2
+                                                  }
+                                                },
+                                                "len": 4294967295,
+                                                "offset": "0x0200000000000000000000000000000000000000000000000000000000000000"
+                                              }
+                                            },
+                                            "name": "elems"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "name": "entries"
+                                  }
+                                ]
+                              }
+                            },
+                            "name": "keys"
+                          },
+                          {
+                            "layout": {
+                              "hash": {
+                                "layout": {
+                                  "cell": {
+                                    "key": "0x0200000001000000000000000000000000000000000000000000000000000000",
+                                    "ty": 8
+                                  }
+                                },
+                                "offset": "0x0100000001000000000000000000000000000000000000000000000000000000",
+                                "strategy": {
+                                  "hasher": "Blake2x256",
+                                  "postfix": "",
+                                  "prefix": "0x696e6b20686173686d6170"
+                                }
+                              }
+                            },
+                            "name": "values"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "balances"
+                  },
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "struct": {
+                                "fields": [
+                                  {
+                                    "layout": {
+                                      "cell": {
+                                        "key": "0x0200000001000000000000000000000000000000000000000000000000000000",
+                                        "ty": 0
+                                      }
+                                    },
+                                    "name": "header"
+                                  },
+                                  {
+                                    "layout": {
+                                      "struct": {
+                                        "fields": [
+                                          {
+                                            "layout": {
+                                              "cell": {
+                                                "key": "0x0300000001000000000000000000000000000000000000000000000000000000",
+                                                "ty": 1
+                                              }
+                                            },
+                                            "name": "len"
+                                          },
+                                          {
+                                            "layout": {
+                                              "array": {
+                                                "cellsPerElem": 1,
+                                                "layout": {
+                                                  "cell": {
+                                                    "key": "0x0300000002000000000000000000000000000000000000000000000000000000",
+                                                    "ty": 10
+                                                  }
+                                                },
+                                                "len": 4294967295,
+                                                "offset": "0x0400000001000000000000000000000000000000000000000000000000000000"
+                                              }
+                                            },
+                                            "name": "elems"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "name": "entries"
+                                  }
+                                ]
+                              }
+                            },
+                            "name": "keys"
+                          },
+                          {
+                            "layout": {
+                              "hash": {
+                                "layout": {
+                                  "cell": {
+                                    "key": "0x0400000002000000000000000000000000000000000000000000000000000000",
+                                    "ty": 12
+                                  }
+                                },
+                                "offset": "0x0300000002000000000000000000000000000000000000000000000000000000",
+                                "strategy": {
+                                  "hasher": "Blake2x256",
+                                  "postfix": "",
+                                  "prefix": "0x696e6b20686173686d6170"
+                                }
+                              }
+                            },
+                            "name": "values"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "operator_approval"
+                  }
+                ]
+              }
+            },
+            "name": "psp1155"
+          },
+          {
+            "layout": {
+              "struct": {
+                "fields": [
+                  {
+                    "layout": {
+                      "struct": {
+                        "fields": [
+                          {
+                            "layout": {
+                              "cell": {
+                                "key": "0x0400000002000000000000000000000000000000000000000000000000000000",
+                                "ty": 0
+                              }
+                            },
+                            "name": "header"
+                          },
+                          {
+                            "layout": {
+                              "struct": {
+                                "fields": [
+                                  {
+                                    "layout": {
+                                      "cell": {
+                                        "key": "0x0500000002000000000000000000000000000000000000000000000000000000",
+                                        "ty": 1
+                                      }
+                                    },
+                                    "name": "len"
+                                  },
+                                  {
+                                    "layout": {
+                                      "array": {
+                                        "cellsPerElem": 1,
+                                        "layout": {
+                                          "cell": {
+                                            "key": "0x0500000003000000000000000000000000000000000000000000000000000000",
+                                            "ty": 14
+                                          }
+                                        },
+                                        "len": 4294967295,
+                                        "offset": "0x0600000002000000000000000000000000000000000000000000000000000000"
+                                      }
+                                    },
+                                    "name": "elems"
+                                  }
+                                ]
+                              }
+                            },
+                            "name": "entries"
+                          }
+                        ]
+                      }
+                    },
+                    "name": "keys"
+                  },
+                  {
+                    "layout": {
+                      "hash": {
+                        "layout": {
+                          "cell": {
+                            "key": "0x0600000003000000000000000000000000000000000000000000000000000000",
+                            "ty": 15
+                          }
+                        },
+                        "offset": "0x0500000003000000000000000000000000000000000000000000000000000000",
+                        "strategy": {
+                          "hasher": "Blake2x256",
+                          "postfix": "",
+                          "prefix": "0x696e6b20686173686d6170"
+                        }
+                      }
+                    },
+                    "name": "values"
+                  }
+                ]
+              }
+            },
+            "name": "denied_ids"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "last_vacant",
+                  "type": 1,
+                  "typeName": "Index"
+                },
+                {
+                  "name": "len",
+                  "type": 1,
+                  "typeName": "u32"
+                },
+                {
+                  "name": "len_entries",
+                  "type": 1,
+                  "typeName": "u32"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Header"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 7,
+                      "typeName": "VacantEntry"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Vacant"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 3,
+                      "typeName": "T"
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Occupied"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 3
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Entry"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "tuple": [
+              4,
+              6
+            ]
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 5
+            }
+          }
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 4,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 7,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "next",
+                  "type": 1,
+                  "typeName": "Index"
+                },
+                {
+                  "name": "prev",
+                  "type": 1,
+                  "typeName": "Index"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "VacantEntry"
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "value",
+                  "type": 9,
+                  "typeName": "V"
+                },
+                {
+                  "name": "key_index",
+                  "type": 1,
+                  "typeName": "KeyIndex"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "V",
+              "type": 9
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "hashmap",
+            "ValueEntry"
+          ]
+        }
+      },
+      {
+        "id": 9,
+        "type": {
+          "def": {
+            "primitive": "u128"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 7,
+                      "typeName": "VacantEntry"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Vacant"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 11,
+                      "typeName": "T"
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Occupied"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 11
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Entry"
+          ]
+        }
+      },
+      {
+        "id": 11,
+        "type": {
+          "def": {
+            "tuple": [
+              6,
+              6
+            ]
+          }
+        }
+      },
+      {
+        "id": 12,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "value",
+                  "type": 13,
+                  "typeName": "V"
+                },
+                {
+                  "name": "key_index",
+                  "type": 1,
+                  "typeName": "KeyIndex"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "V",
+              "type": 13
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "hashmap",
+            "ValueEntry"
+          ]
+        }
+      },
+      {
+        "id": 13,
+        "type": {
+          "def": {
+            "primitive": "bool"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 7,
+                      "typeName": "VacantEntry"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Vacant"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 4,
+                      "typeName": "T"
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Occupied"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 4
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "stash",
+            "Entry"
+          ]
+        }
+      },
+      {
+        "id": 15,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "value",
+                  "type": 16,
+                  "typeName": "V"
+                },
+                {
+                  "name": "key_index",
+                  "type": 1,
+                  "typeName": "KeyIndex"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "V",
+              "type": 16
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "collections",
+            "hashmap",
+            "ValueEntry"
+          ]
+        }
+      },
+      {
+        "id": 16,
+        "type": {
+          "def": {
+            "tuple": []
+          }
+        }
+      },
+      {
+        "id": 17,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 5
+            }
+          }
+        }
+      },
+      {
+        "id": 18,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 16
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Ok"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 19
+                    }
+                  ],
+                  "index": 1,
+                  "name": "Err"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "T",
+              "type": 16
+            },
+            {
+              "name": "E",
+              "type": 19
+            }
+          ],
+          "path": [
+            "Result"
+          ]
+        }
+      },
+      {
+        "id": 19,
+        "type": {
+          "def": {
+            "variant": {
+              "variants": [
+                {
+                  "fields": [
+                    {
+                      "type": 20,
+                      "typeName": "String"
+                    }
+                  ],
+                  "index": 0,
+                  "name": "Custom"
+                },
+                {
+                  "index": 1,
+                  "name": "InsufficientBalance"
+                },
+                {
+                  "index": 2,
+                  "name": "TransferToZeroAddress"
+                },
+                {
+                  "index": 3,
+                  "name": "NotAllowed"
+                },
+                {
+                  "fields": [
+                    {
+                      "type": 20,
+                      "typeName": "String"
+                    }
+                  ],
+                  "index": 4,
+                  "name": "SafeTransferCheckFailed"
+                }
+              ]
+            }
+          },
+          "path": [
+            "contracts",
+            "traits",
+            "errors",
+            "psp1155",
+            "PSP1155Error"
+          ]
+        }
+      },
+      {
+        "id": 20,
+        "type": {
+          "def": {
+            "primitive": "str"
+          }
+        }
+      },
+      {
+        "id": 21,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 22
+            }
+          }
+        }
+      },
+      {
+        "id": 22,
+        "type": {
+          "def": {
+            "tuple": [
+              4,
+              9
+            ]
+          }
+        }
+      },
+      {
+        "id": 23,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 24
+            }
+          }
+        }
+      },
+      {
+        "id": 24,
+        "type": {
+          "def": {
+            "tuple": [
+              6,
+              4
+            ]
+          }
+        }
+      },
+      {
+        "id": 25,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 9
+            }
+          }
+        }
+      }
+    ]
+  }
+}
